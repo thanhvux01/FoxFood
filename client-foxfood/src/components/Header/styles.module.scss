@@ -1,0 +1,62 @@
+
+
+.container{
+    
+    .header-box{
+        padding: 20px 0px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1200px;
+        display: flex;
+        align-items: center;
+       .icon-box{
+        display: flex;
+        
+        align-items: center;
+        .logo{
+           
+            max-width: 80px;
+            aspect-ratio: 1/1;
+        }
+        label{
+            
+            font-size: 1.5rem;
+            font-family: FeatherBold;
+            color: rgb(235, 173, 98);
+           
+        }
+       }
+      .list-label{
+          display: flex;
+          width: 500px;
+          justify-content: space-around;
+          
+          label{
+            cursor: pointer;
+            font-size: 1.4rem;
+            font-family: ShopeeBold;
+          }
+
+          
+      }
+    }
+    .user-box{
+        display: flex;
+        margin-left: auto;
+        justify-content: space-between;
+        align-items: center;
+        min-width:200px;
+        label{
+            font-size: 1.2rem;
+        }
+        .icon{
+            font-size: 2rem;
+        }
+        .btn-bottom{
+            display: flex;
+           .btn{
+             margin-left: auto;
+           }
+        }
+    }
+}

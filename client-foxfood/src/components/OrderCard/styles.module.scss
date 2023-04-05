@@ -1,0 +1,36 @@
+
+
+.card{
+   height: 376px;
+   width: 280px;
+   background-color: rgb(255, 255, 255);
+   display: flex;
+   box-shadow: 0 0 8px 0 rgb(0 0 0 / 20%);
+   flex-direction: column;
+   align-items: center;
+   user-select: none;
+   .img-holder{
+    
+     .img{
+        margin-top: 10px;
+        height: 218px;
+        width: 260px;
+        object-fit: fill;
+     }
+   }
+   .title{
+    padding: 5px 0px;
+    font-family: ShopeeBold;
+    font-size: 1.2rem;
+   }
+   .detail{
+    height: 50px;
+    overflow:auto;
+   }
+   .btn{
+    margin-top: 5px;
+     width: 250px;
+     height: 47px;
+     background-color: #ebad62;
+   }
+}

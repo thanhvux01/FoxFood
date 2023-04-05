@@ -1,0 +1,53 @@
+
+
+.container{
+    padding-top: 10px;
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    .category-box{
+
+        max-width: 1200px;
+        border-bottom: 1px solid #CCC;
+        display: flex;
+        gap: 50px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        position: relative;
+        &::-webkit-scrollbar {
+         width: 5px;
+         height: 10px;
+         background-color: #aaa;
+       }
+       &::-webkit-scrollbar-thumb {
+         background: rgb(236, 161, 69); 
+         border-radius: 10px;
+       }
+       .category-item{
+         height: 40px;
+         user-select: none;
+         >label{
+            font-family: ShopeeBold;
+            font-size: 1.5rem;
+            white-space: nowrap;
+            color: rgba(0,0,0,.5);
+            position: relative;
+            cursor: pointer;
+            
+         }
+        .active{
+           &::after{
+               content: '';
+               width: 100%;
+               bottom: -5px;
+               position: absolute;
+               left: 0px;
+               height: 5px;
+               background-color: #e4002b
+           }
+        }
+       }
+    }
+    
+}

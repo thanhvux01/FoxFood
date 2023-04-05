@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    justify-content: center;
+       .user-card{
+        display: grid;
+        grid-template-columns: 60% 40%;
+        
+        min-width: 800px;
+        min-height: 500px;
+        .form-user{
+            margin-top: 20px;
+            flex-direction: column;
+            align-items: center;
+            display: flex;
+            height: 200px;
+           .input-area{
+              
+            >label{
+                display: block;
+                font-size: 1.3rem;
+                font-family: Philosopher;
+            }
+            .input{
+                width: 360px;
+            }
+           }
+          .btn{
+            margin: 20px;
+            width: 360px;
+          }
+        }
+        .avatar{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: -50px;
+          
+        }
+       }
+
+}

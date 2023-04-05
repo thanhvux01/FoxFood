@@ -1,0 +1,16 @@
+
+
+.container{
+       display: flex;
+      .list-item{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        >img{
+            max-width: 50px;
+            max-height: 50px;
+            border-radius: 10px;
+        }
+
+      }
+}

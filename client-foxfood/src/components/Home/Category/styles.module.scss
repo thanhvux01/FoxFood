@@ -1,0 +1,31 @@
+
+.container{
+    display: flex;
+    justify-content: center ;
+    margin-top: 20px;
+    .category-box{
+        width: 80%;
+        .header{
+          align-items: center;
+          display: flex;
+          label{
+             font-size: 1.2rem;
+             font-family: PhilosopherBold;
+          }
+          .border-line{
+             height: 2px;
+             flex: 1 0px;
+             background-color: rgb(167, 164, 164);
+          }
+        }
+        .bottom-menu{
+            margin-top: 20px;
+            display: grid;
+            max-width: 100%;
+            justify-content: center;
+            grid-template-columns: repeat(auto-fit,300px);
+            row-gap: 20px;
+        }
+    }
+ 
+}
