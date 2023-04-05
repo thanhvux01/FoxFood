@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Dish;
-use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
@@ -57,4 +56,39 @@ class CartController extends Controller
            ->join('carts', 'carts.dish_id', '=', 'dishes.id')->where("user_id","=",$id)->get();
         return response()->json(['status' => 'success', 'data' => $cart], 200);
    }
+   public function UpdateQuantity(Request $request) {
+       $id = Auth::id();
+       $validator = Validator::make($request->all(),[
+           'cart_id' => 'required|exists:carts,id',
+           'quantity'=>'required|integer|min:1',
+       ]);
+       if ($validator->fails()) {
+           return response()->json([
+               'status' => 'error',
+               'message' => $validator->errors()
+           ], 400);
+       }
+      $cart = Cart::find($request->cart_id)->first();
+       $cart->quantity = $request->quantity;
+       $cart->save();
+       return response()->json(['status' => 'success', 'data' => $cart], 200);
+   }
+    public function UpdateChecked(Request $request) {
+        $id = Auth::id();
+        $validator = Validator::make($request->all(),[
+            'cart_id' => 'required|exists:carts,id',
+            'isChecked'=>'required|boolean',
+        ]);
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $validator->errors()
+            ], 400);
+        }
+        $cart = Cart::find($request->cart_id)->first();
+        $cart->isChecked = $request->isChecked;
+        $cart->save();
+        return response()->json(['status' => 'success', 'data' => $cart], 200);
+    }
+
 }

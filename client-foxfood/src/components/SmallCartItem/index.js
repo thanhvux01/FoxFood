@@ -5,11 +5,11 @@ import { MenuItem } from '@mui/material';
 import { Chicken } from '../../assets/png';
 let cx = classNames.bind(styles);
 
-const SmallCardItem = ({name,price,quantity}) => {
+const SmallCardItem = ({name,price,quantity,img}) => {
   return (
     <MenuItem className={cx('container')} >
              <div className={cx('list-item')}>
-                 <img src={Chicken} />
+                 <img src={img} />
                  <label>{name}</label>
                  <label>{quantity*price} VND</label>
              </div>

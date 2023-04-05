@@ -14,6 +14,7 @@ import { Fox } from "../../assets/png";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import SmallCardItem from "../SmallCartItem";
+import { Authbool } from "../../storage/AuthBool";
 let cx = classNames.bind(styles);
 const Header = ({ ListCart }) => {
   const [Cookies,SetCookie,RemoveCookie] = useCookies();
@@ -82,7 +83,7 @@ const Header = ({ ListCart }) => {
               "aria-labelledby": "basic-button",
             }}
           >
-           { !Cookies['fox_token'] && <MenuItem
+           { Cookies['fox_token'] && <MenuItem
               onClick={() => {
                 Navigate("/login");
               }}
@@ -126,11 +127,14 @@ const Header = ({ ListCart }) => {
                     name={item.name}
                     price={item.price}
                     quantity={item.quantity}
+                    img={item.image}
                   />
                 );
               })}
             <MenuItem className={cx("btn-bottom")}>
-              <Button className={cx("btn")}>Giỏ Hàng</Button>
+              <Button className={cx("btn")} onClick={()=>{
+                Navigate('/user')
+              }}>Giỏ Hàng</Button>
             </MenuItem>
           </Menu>
           <FontAwesomeIcon icon={faBars} size="2x" />

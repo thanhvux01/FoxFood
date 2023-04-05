@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  justify-content: center;
+  
+  .address-section{
+    padding: 5px;
+    min-width: 80%;
+    flex-direction: column;
+     
+     .title{
+        color: rgb(231, 77, 34);
+        >label{
+            font-size: 1.5rem;
+            font-family: ShopeeMedium;
+            
+        }
+     }
+     .detail{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        .btn{
+            margin-left: auto;
+        }
+   
+     }
+  }
+  
+}

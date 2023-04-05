@@ -7,6 +7,7 @@ import { CookiesProvider } from "react-cookie";
 import './global.scss';
 import User from "./pages/User";
 import Cart from "./pages/Cart";
+import Payment from "./pages/Payment";
 
 const App = () => {
   return (
@@ -15,8 +16,6 @@ const App = () => {
      <Routes>
        <Route path="/" element={<Home/>} />
        <Route path="/menu" element={<Menu/>} >
-     
-        
         </Route>
        {/* <Route path="/auth"  >
              <Route index element={<Authentication/>}/>
@@ -25,6 +24,7 @@ const App = () => {
           <Route path="/login" element={<Login/>} ></Route>
           <Route path="/user" element={<User/>} > </Route>
           <Route path="/cart" element={<Cart/>} > </Route>
+          <Route path="/payment" element={<Payment/>} > </Route>
       
 
       </Routes>

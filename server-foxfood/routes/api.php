@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -39,11 +40,19 @@ Route::group(['middleware'=>['auth:sanctum']],function (){
 Route::group(['middleware'=>['auth:sanctum']],function (){
     Route::post('carts',[CartController::class,"AddProduct"]);
     Route::get('carts',[CartController::class,'index']);
+    Route::put('carts',[CartController::class,'UpdateQuantity']);
+    Route::put('carts-checked',[CartController::class,'UpdateChecked']);
 });
 
 /*AUTH ROUTE*/
 Route::post("register",[AuthController::class,'Register']);
 Route::post("login",[AuthController::class,'Login']);
+
+
+/*PAYMENT ROUTE*/
+Route::group(['middleware'=>['auth:sanctum']],function (){
+    Route::post('pay',[OrderController::class,"MakeOrder"]);
+});
 
 /*CATEGORY ROUTE */
 Route::get("categories",[CategoryController::class,'index']);

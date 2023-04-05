@@ -28,9 +28,9 @@ class AuthController extends Controller
         $user = User::where('username',$request['username'])->first();
         if($user){
             if(Hash::check($request['password'],$user->password)){
-               if($user->tokens()->get()){
-                   $user->tokens()->delete();
-               }
+//               if($user->tokens()->get()){
+//                   $user->tokens()->delete();
+//               }
                 $token = $user->createToken('API_TOKEN')->plainTextToken;
                 return response()->json(['message' => 'Login Success','token'=>$token], 200)->withCookie('fox_token',$token,24*60);
             };

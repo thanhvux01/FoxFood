@@ -18,17 +18,18 @@ const Menu = () => {
           Authorization: "Bearer " + token, //the token is a variable which holds the token
         }});
         SetCart(data['data']['data']);
-        console.log(data['data']['data']);
       }
       catch(err){
         console.log(err.request.status);
       }
   }
   const AddToCart =  async (id,quantity) => {
+      
        try{
-        await axios.post('http://localhost:8000/api/carts',{dish_id:id,quantity:quantity},{headers: {
+        await axios.post('http://localhost:8000/api/carts',{dish_id:id.toString(),quantity:quantity},{headers: {
           Authorization: "Bearer " + token, //the token is a variable which holds the token
         }});
+        GetCart();
       }catch(err){
          console.log(err);
       }

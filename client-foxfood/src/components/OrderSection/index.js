@@ -5,12 +5,12 @@ import OrderCard from '../OrderCard';
 let cx = classNames.bind(styles);
 
 const OrderSection = ({ListFood,AddToCart}) => {
- 
+   
   return (
     <div className={cx('container')}>
        <div className={cx('grid-container')}>
           {ListFood.map((item)=>{
-            return <OrderCard key={item.name} img={item.image} description={item.description} name={item.name} AddToCart={AddToCart} id={item.dish_id} />
+            return <OrderCard key={item.name} img={item.image} description={item.description} name={item.name} AddToCart={AddToCart} id={item.id} />
           })}
        </div>
     </div>

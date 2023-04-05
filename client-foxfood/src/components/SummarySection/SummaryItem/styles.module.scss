@@ -1,0 +1,29 @@
+
+
+.row{
+    display: flex;  
+    width: 100%;
+    align-items: center;
+    .thumbnail{
+        width: 70%;
+        display: flex;
+        align-items: center;
+        gap:10px;
+        .img-holder{
+            >img{
+                
+                width: 46px;
+                height: 46px;
+            }
+        }
+    }
+    .price-detail{
+       width: 10%;
+      }
+      .quantity-detail{
+        width: 10%;
+      }
+      .total-detail{
+        width: 10%;
+      }
+}
