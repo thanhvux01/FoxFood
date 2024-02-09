@@ -60,7 +60,7 @@ npm i
 npm start
 ```
 
-# Fox is cutest Animal
+# Fox is the cutest Animal
 
 ![FoxImage](https://canadiangeographic.ca/wp-content/uploads/2022/02/urbanfox_feb11-1440x960.jpg)
 
